@@ -1,0 +1,22 @@
+.cBtn{
+    color: white;
+    position: relative;
+    width: 2.5rem;
+}
+.cBtn::after{
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: #FAB63E;
+    transition: all ease 0.4s;
+}
+.active{
+    color: #FAB63E;
+    transform: scale(1.3);
+}
+.active::after{
+    width: 100%;
+}
