@@ -1,0 +1,213 @@
+[
+  {
+    "image": "https://i.ibb.co/6tStW43/plant-prefab-summit-palisades-front-exterior.jpg",
+    "estate_title": "Modern Single-Family Home",
+    "id": "001",
+    "segment_name": "single-family",
+    "description": "A contemporary single-family home featuring spacious interiors and a landscaped backyard, perfect for family living.",
+    "price": "$750,000",
+    "status": "sale",
+    "area": "3000 sq ft",
+    "location": "Suburban Los Angeles, CA",
+    "facilities": [
+      "spacious living room",
+      "backyard",
+      "garage",
+      "modern kitchen"
+    ],
+    "view_property_button": "View Property"
+  },
+  {
+    "image": "https://i.ibb.co/QJdLL48/im-491516.jpg",
+    "estate_title": "Townhouse in Historic District",
+    "id": "002",
+    "segment_name": "townhouse",
+    "description": "A charming townhouse nestled in a historic district, offering classic architecture and modern amenities.",
+    "price": "$500,000",
+    "status": "sale",
+    "area": "2000 sq ft",
+    "location": "Brooklyn, NY",
+    "facilities": [
+      "private patio",
+      "community garden",
+      "modern kitchen",
+      "walk-in closets"
+    ],
+    "view_property_button": "View Property"
+  },
+  {
+    "image": "https://i.ibb.co/pQtjjDD/TW-Multifamily-The-Lane-Exterior.jpg",
+    "estate_title": "Luxury Apartment Complex",
+    "id": "003",
+    "segment_name": "apartment",
+    "description": "A luxury apartment complex featuring upscale amenities and breathtaking views of the city skyline.",
+    "price": "$3,000/month",
+    "status": "rent",
+    "area": "1500 sq ft",
+    "location": "Downtown Miami, FL",
+    "facilities": [
+      "swimming pool",
+      "fitness center",
+      "concierge service",
+      "rooftop lounge"
+    ],
+    "view_property_button": "View Property"
+  },
+  {
+    "image": "https://i.ibb.co/qyKJZpT/Dartmouth-Graduate-Housing-Community.jpg",
+    "estate_title": "Student Housing Community",
+    "id": "004",
+    "segment_name": "student housing",
+    "description": "A modern student housing community offering furnished apartments and convenient access to campus facilities.",
+    "price": "$1,200/month",
+    "status": "rent",
+    "area": "800 sq ft",
+    "location": "University District, Seattle, WA",
+    "facilities": [
+      "study lounges",
+      "fitness center",
+      "game room",
+      "laundry facilities"
+    ],
+    "view_property_button": "View Property"
+  },
+  {
+    "image": "https://i.ibb.co/JFqThVH/Retirement-Community-Living-vs-Senior-Housing.jpg",
+    "estate_title": "Senior Living Community",
+    "id": "005",
+    "segment_name": "senior living",
+    "description": "A peaceful senior living community offering comfortable accommodations, social activities, and healthcare services.",
+    "price": "$4,500/month",
+    "status": "rent",
+    "area": "1200 sq ft",
+    "location": "Retirement Village, Phoenix, AZ",
+    "facilities": [
+      "community center",
+      "gardens",
+      "medical assistance",
+      "transportation services"
+    ],
+    "view_property_button": "View Property"
+  },
+  {
+    "image": "https://i.ibb.co/TWjNstP/Ikena-Lani-Home-Rental-Kauai.jpg",
+    "estate_title": "Vacation Rental Villa",
+    "id": "006",
+    "segment_name": "vacation rental",
+    "description": "A luxurious vacation rental villa offering stunning views, private pool, and amenities for a perfect getaway.",
+    "price": "$500/night",
+    "status": "rent",
+    "area": "3500 sq ft",
+    "location": "Maui, Hawaii",
+    "facilities": [
+      "private pool",
+      "ocean view terrace",
+      "gourmet kitchen",
+      "entertainment room"
+    ],
+    "view_property_button": "View Property"
+  },
+  {
+    "image": "https://i.ibb.co/W6WV9fW/East-Howe-Steps-089-1024x685.jpg",
+    "estate_title": "Cozy Apartment in Suburbia",
+    "id": "007",
+    "segment_name": "apartment",
+    "description": "A cozy apartment located in a peaceful suburban neighborhood, ideal for individuals or small families.",
+    "price": "$1,500/month",
+    "status": "rent",
+    "area": "900 sq ft",
+    "location": "Suburban Chicago, IL",
+    "facilities": [
+      "balcony",
+      "fitness center",
+      "parking space",
+      "pet-friendly"
+    ],
+    "view_property_button": "View Property"
+  },
+  {
+    "image": "https://i.ibb.co/gT6qp6s/479048333.jpg",
+    "estate_title": "Family-Friendly Townhouse",
+    "id": "008",
+    "segment_name": "townhouse",
+    "description": "A spacious townhouse designed for families, featuring multiple bedrooms, play areas, and communal spaces.",
+    "price": "$600,000",
+    "status": "sale",
+    "area": "2500 sq ft",
+    "location": "Sunnyvale, CA",
+    "facilities": ["backyard", "playroom", "garage", "community pool"],
+    "view_property_button": "View Property"
+  },
+  {
+    "image": "https://i.ibb.co/b5KVQq9/images-rezfusion.jpg",
+    "estate_title": "Lakefront Retreat",
+    "id": "009",
+    "segment_name": "vacation rental",
+    "description": "A serene lakefront retreat offering peace and tranquility amidst nature's beauty, perfect for a relaxing vacation.",
+    "price": "$300/night",
+    "status": "rent",
+    "area": "2000 sq ft",
+    "location": "Lake Tahoe, CA",
+    "facilities": [
+      "private dock",
+      "fire pit",
+      "hot tub",
+      "deck with lake views"
+    ],
+    "view_property_button": "View Property"
+  },
+  {
+    "image": "https://i.ibb.co/Tqh6rhq/Biscuit-Company.png",
+    "estate_title": "Downtown Loft Apartment",
+    "id": "010",
+    "segment_name": "apartment",
+    "description": "A stylish loft apartment in the heart of the city, featuring exposed brick walls, high ceilings, and industrial chic design.",
+    "price": "$2,200/month",
+    "status": "rent",
+    "area": "1200 sq ft",
+    "location": "Downtown Denver, CO",
+    "facilities": [
+      "open-concept layout",
+      "rooftop deck",
+      "modern kitchen",
+      "in-unit laundry"
+    ],
+    "view_property_button": "View Property"
+  },
+  {
+    "image": "https://i.ibb.co/wyHT1cd/panama-city-beach-vacation-rentals-ramsgate-harbour-258-0-20216-91.jpg",
+    "estate_title": "Beachfront Condo",
+    "id": "011",
+    "segment_name": "condo",
+    "description": "A luxurious beachfront condo offering panoramic ocean views and resort-style amenities for a lavish coastal lifestyle.",
+    "price": "$1,000,000",
+    "status": "sale",
+    "area": "1800 sq ft",
+    "location": "Miami Beach, FL",
+    "facilities": [
+      "private beach access",
+      "poolside cabanas",
+      "fitness center",
+      "24/7 security"
+    ],
+    "view_property_button": "View Property"
+  },
+  {
+    "image": "https://i.ibb.co/q57Jhsx/dam-view-1200x720.webp",
+    "estate_title": "Retirement Village Cottage",
+    "id": "012",
+    "segment_name": "senior living",
+    "description": "A cozy cottage nestled within a vibrant retirement village, offering comfort, companionship, and convenient amenities.",
+    "price": "$350,000",
+    "status": "sale",
+    "area": "1000 sq ft",
+    "location": "Senior Community, Orlando, FL",
+    "facilities": [
+      "community clubhouse",
+      "garden patio",
+      "on-site healthcare",
+      "social activities"
+    ],
+    "view_property_button": "View Property"
+  }
+]
