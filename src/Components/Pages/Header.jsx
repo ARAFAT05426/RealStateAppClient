@@ -8,19 +8,20 @@ import { FaAngleDown } from "react-icons/fa6";
 import 'animate.css';
 import "swiper/css";
 import "swiper/css/pagination";
-
-// import required modules
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+AOS.init();
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 const Header = () => {
   return (
-    <header className="text-4xl font-semibold relative h-[70vh] lg:min-h-[calc(100vh-64px)] text-white">
+    <header data-aos="flip-up" data-aos-duration="700" className="text-4xl font-semibold relative h-[70vh] lg:min-h-[calc(100vh-64px)] text-white">
       <div className="h-[70vh] lg:min-h-screen absolute top-0 left-0 w-full">
         <Swiper
           grabCursor={true}
           loop={true}
           autoplay={{
-            delay: 2500,
+            delay: 1700,
             disableOnInteraction: false,
           }}
           pagination={{

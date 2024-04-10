@@ -1,12 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "./Root";
 import SignUp from "../Pages/SignUp";
-import Apartments from "../Pages/Apartments";
 import UpdateProfile from "../Pages/UpdateProfile";
 import Contact from "../Pages/Contact";
 import LogIn from "../Pages/LogIn";
 import Home from "../Pages/Home";
 import EstateDetails from "../Pages/EstateDetails";
+import Properties from './../Pages/Properties';
 
 const routes = createBrowserRouter([
   {
@@ -27,8 +27,8 @@ const routes = createBrowserRouter([
         element: <LogIn></LogIn>,
       },
       {
-        path: "/apartments",
-        element: <Apartments></Apartments>,
+        path: "/properties",
+        element: <Properties></Properties>,
       },
       {
         path: "/updateProfile",
@@ -41,7 +41,7 @@ const routes = createBrowserRouter([
       {
         path: "/estates/:id",
         element: <EstateDetails></EstateDetails>,
-        loader: () => fetch('Data.json')
+        loader: async() => await fetch('/Data.json')
       },
     ],
   },

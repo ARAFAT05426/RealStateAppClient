@@ -3,7 +3,7 @@ import Header from './Header';
 const Home = () => {
     return (
         <div>
-            <div className='min-h-screen'>
+            <div className='h-fit'>
             <Header></Header>
             </div>
             <Estates></Estates>
