@@ -10,27 +10,36 @@ import { AiOutlineEye } from "react-icons/ai";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
+
 AOS.init();
 const LogIn = () => {
   const [hide, setHide] = useState(false);
 
-  const { handleSignIn } = useContext(authConfigContext);
+  const { handleSignIn, handleSignInWithPopup, handleSignInWithgithub } = useContext(authConfigContext);
+  const handleSocialSignIn = (method) =>{
+    method()
+    .then(() =>{
+      // console.log(result);
+    })
+    .catch(() =>{
+      // console.log(err);
+    })
+  }
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-
   const onSubmit = (data, e) => {
     const { email, password } = data;
     handleSignIn(email, password)
       .then((result) => {
-        e.target.reset()
+        e.target.reset();
         console.log(result);
       })
       .catch((error) => {
-        console.log(error);
-      });
+        console.log(error)});
   };
   return (
     <div
@@ -61,13 +70,17 @@ const LogIn = () => {
             </div>
             {errors.email && (
               <span className="text-xs text-[#FF0000]">
-                This field is required
+                {errors.email.message}
               </span>
             )}
             <div data-aos="flip-up" data-aos-delay="300">
               <div className="flex bg-white h-12 focus-within:outline outline-2 items-center gap-1w-full px-4 py-3 rounded border text-sm font-light">
                 <input
-                  {...register("password", { required: true })}
+                {...register("password", {
+                  required: true,
+                  minLength: 6,
+                  maxLength: 16,
+                })}
                   type={`${hide === false ? "password" : "text"}`}
                   placeholder="Password..."
                   className="w-full py-1 bg-transparent outline-none rounded text-sm font-light"
@@ -87,7 +100,7 @@ const LogIn = () => {
 
               {errors.email && (
                 <span className="text-xs text-[#FF0000]">
-                  This field is required
+                  {errors.password.message}
                 </span>
               )}
             </div>
@@ -120,14 +133,16 @@ const LogIn = () => {
             <div className="flex items-center w-4/4 mx-auto justify-around">
               <div data-aos="flip-up" data-aos-delay="600">
                 <img
-                  className="w-40 h-16 px-3 py-1 rounded-md border border-[#112D4E] bg-slate-50"
+                    onClick={() => handleSocialSignIn(handleSignInWithPopup)}
+                  className="w-40 h-16 px-3 py-1 rounded-md border border-[#112D4E] bg-slate-50 cursor-pointer"
                   src={google}
                   alt=""
                 />
               </div>
               <div data-aos="flip-up" data-aos-delay="600">
                 <img
-                  className="w-40 h-16 px-3 py-1 rounded-md border border-[#112D4E] bg-slate-50"
+                onClick={() => handleSocialSignIn(handleSignInWithgithub)}
+                  className="w-40 h-16 px-3 py-1 rounded-md border border-[#112D4E] bg-slate-50 cursor-pointer"
                   src={github}
                   alt=""
                 />

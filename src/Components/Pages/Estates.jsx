@@ -19,10 +19,9 @@ const Estates = () => {
       </div>
       <div data-aos="flip-up" data-aos-duration="1300">
         <Link className="" to={"/properties"}>
-          {" "}
           <h1 className="text-center px-5 py-3 bg-[#FAB63E] font-semibold text-white w-fit mx-auto mb-7">
             Explore More
-          </h1>{" "}
+          </h1>
         </Link>
       </div>
     </div>

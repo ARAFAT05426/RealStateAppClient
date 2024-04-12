@@ -3,14 +3,19 @@ import { LuMenuSquare } from "react-icons/lu";
 import { FaCircleUser } from "react-icons/fa6";
 import logo from "/resources/logo.png";
 import "./Navigation.css";
-import AOS from "aos";
-import "aos/dist/aos.css"; // You can also use <link> for styles
 import { useContext } from "react";
 import authConfigContext from "../../Hooks/authConfigContext";
-// ..
+import AOS from "aos";
+import "aos/dist/aos.css";
 AOS.init();
 const Nav = () => {
-  const { user, handleSignOut } = useContext(authConfigContext);
+  const { user, handleSignOut, setUser } = useContext(authConfigContext);
+  const handleClick = () =>{
+    handleSignOut()
+    .then(() =>{
+      setUser(null)
+    })
+  }
   const links = (
     <>
       <div>
@@ -23,11 +28,14 @@ const Nav = () => {
           properties
         </NavLink>
       </div>
-      <div>
+      {
+        user && 
+        <div>
         <NavLink className="cBtn" to={"/updateProfile"}>
           Update Profile
         </NavLink>
       </div>
+      }
       <div>
         <NavLink className="cBtn" to={"/contact"}>
           Contact
@@ -71,7 +79,7 @@ const Nav = () => {
       >
         {user?.photoURL ? (
           <button
-            onClick={handleSignOut}
+            onClick={handleClick}
             className="px-4 py-2 bg-[#FAB63E] text-base flex items-center gap-2"
           >
             <img className="w-7 rounded-full" src={user?.photoURL} alt="" />

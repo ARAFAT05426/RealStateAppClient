@@ -7,12 +7,14 @@ import LogIn from "../Pages/LogIn";
 import Home from "../Pages/Home";
 import EstateDetails from "../Pages/EstateDetails";
 import Properties from './../Pages/Properties';
+import Error from "../Pages/Error";
+import Classified from "../Pages/Classified";
 
 const routes = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-    errorElement: <>I am error</>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: "/",
@@ -32,7 +34,7 @@ const routes = createBrowserRouter([
       },
       {
         path: "/updateProfile",
-        element: <UpdateProfile></UpdateProfile>,
+        element: <Classified><UpdateProfile/></Classified>,
       },
       {
         path: "/contact",
@@ -40,7 +42,7 @@ const routes = createBrowserRouter([
       },
       {
         path: "/estates/:id",
-        element: <EstateDetails></EstateDetails>,
+        element: <Classified><EstateDetails/></Classified>,
         loader: async() => await fetch('/Data.json')
       },
     ],

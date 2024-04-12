@@ -6,24 +6,38 @@ import { useContext, useState } from "react";
 import { AiOutlineEye } from "react-icons/ai";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
 import authConfigContext from "../../Hooks/authConfigContext";
+import "react-toastify/dist/ReactToastify.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { toast } from "react-toastify";
+import auth from './../../Utilities/firebaseConfig';
 AOS.init();
 const SignUp = () => {
   const [hide, setHide] = useState(false);
-  const { handleCreateUser, handleSignOut, handleUpdateProfile } = useContext(authConfigContext);
+  const { handleCreateUser, handleUpdateProfile, setUser } = useContext(authConfigContext);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-
   const onSubmit = (data,e) => {
     const { name, email, password, url } = data;
+    const passValue = data.password;
+    if(!/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(passValue)){
+      return toast.error("provide valid PassCode",{
+        position: 'top-right'
+      })
+    }
     handleCreateUser(email, password)
       .then(() => {
         handleUpdateProfile(name, url)
-        handleSignOut().then(() => {});
+        .then(() =>{
+          return setUser({...auth.currentUser})
+        })
+        toast.success("Welcome to KState",{
+          position: "top-right",
+        }
+        )
         e.target.reset();
       })
       .catch((error) => {
