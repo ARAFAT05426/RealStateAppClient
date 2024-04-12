@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "/resources/logo.png";
 import google from "/resources/google.png";
 import github from "/resources/github.png";
@@ -10,36 +10,38 @@ import { AiOutlineEye } from "react-icons/ai";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
-
 AOS.init();
+import { Helmet } from "react-helmet-async";
 const LogIn = () => {
   const [hide, setHide] = useState(false);
-
-  const { handleSignIn, handleSignInWithPopup, handleSignInWithgithub } = useContext(authConfigContext);
-  const handleSocialSignIn = (method) =>{
-    method()
-    .then(() =>{
-      // console.log(result);
-    })
-    .catch(() =>{
-      // console.log(err);
-    })
-  }
+  const { handleSignIn, handleSignInWithPopup, handleSignInWithgithub } =
+    useContext(authConfigContext);
+  const location = useLocation();
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const handleSocialSignIn = (method) => {
+    method()
+      .then(() => {
+        navigate(location?.state || "/");
+      })
+      .catch(() => {
+        // console.log(err);
+      });
+  };
   const onSubmit = (data, e) => {
     const { email, password } = data;
     handleSignIn(email, password)
-      .then((result) => {
+      .then(() => {
         e.target.reset();
-        console.log(result);
+        navigate(location?.state || "/");
       })
       .catch((error) => {
-        console.log(error)});
+        console.log(error);
+      });
   };
   return (
     <div
@@ -48,6 +50,9 @@ const LogIn = () => {
         backgroundImage: `linear-gradient(45deg,rgba(7,25,82,0.7), rgba(0,0,0,0.3)), url(${loginBg})`,
       }}
     >
+      <Helmet>
+        <title>kState || Login</title>
+      </Helmet>
       <div className="flex justify-center items-center w-full min-h-screen text-gray-800">
         <div className="rounded-3xl bg-white/50 backdrop:blur-xl w-[90%] lg:w-1/4 p-6 relative">
           <div
@@ -76,11 +81,11 @@ const LogIn = () => {
             <div data-aos="flip-up" data-aos-delay="300">
               <div className="flex bg-white h-12 focus-within:outline outline-2 items-center gap-1w-full px-4 py-3 rounded border text-sm font-light">
                 <input
-                {...register("password", {
-                  required: true,
-                  minLength: 6,
-                  maxLength: 16,
-                })}
+                  {...register("password", {
+                    required: true,
+                    minLength: 6,
+                    maxLength: 16,
+                  })}
                   type={`${hide === false ? "password" : "text"}`}
                   placeholder="Password..."
                   className="w-full py-1 bg-transparent outline-none rounded text-sm font-light"
@@ -133,7 +138,7 @@ const LogIn = () => {
             <div className="flex items-center w-4/4 mx-auto justify-around">
               <div data-aos="flip-up" data-aos-delay="600">
                 <img
-                    onClick={() => handleSocialSignIn(handleSignInWithPopup)}
+                  onClick={() => handleSocialSignIn(handleSignInWithPopup)}
                   className="w-40 h-16 px-3 py-1 rounded-md border border-[#112D4E] bg-slate-50 cursor-pointer"
                   src={google}
                   alt=""
@@ -141,7 +146,7 @@ const LogIn = () => {
               </div>
               <div data-aos="flip-up" data-aos-delay="600">
                 <img
-                onClick={() => handleSocialSignIn(handleSignInWithgithub)}
+                  onClick={() => handleSocialSignIn(handleSignInWithgithub)}
                   className="w-40 h-16 px-3 py-1 rounded-md border border-[#112D4E] bg-slate-50 cursor-pointer"
                   src={github}
                   alt=""

@@ -7,15 +7,11 @@ import { useContext } from "react";
 import authConfigContext from "../../Hooks/authConfigContext";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Tooltip } from "react-tooltip";
+import 'react-tooltip/dist/react-tooltip.css'
 AOS.init();
 const Nav = () => {
-  const { user, handleSignOut, setUser } = useContext(authConfigContext);
-  const handleClick = () =>{
-    handleSignOut()
-    .then(() =>{
-      setUser(null)
-    })
-  }
+  const { user, handleSignOut } = useContext(authConfigContext);
   const links = (
     <>
       <div>
@@ -25,17 +21,16 @@ const Nav = () => {
       </div>
       <div>
         <NavLink className="cBtn" to={"/properties"}>
-          properties
+          Properties
         </NavLink>
       </div>
-      {
-        user && 
+      {user && (
         <div>
-        <NavLink className="cBtn" to={"/updateProfile"}>
-          Update Profile
-        </NavLink>
-      </div>
-      }
+          <NavLink className="cBtn" to={"/updateProfile"}>
+            Update Profile
+          </NavLink>
+        </div>
+      )}
       <div>
         <NavLink className="cBtn" to={"/contact"}>
           Contact
@@ -62,8 +57,7 @@ const Nav = () => {
             {links}
           </ul>
         </div>
-        <div data-aos="flip-up"
-        data-aos-duration="1300">
+        <div data-aos="flip-up" data-aos-duration="1300">
           <Link to={"/"} className=" cursor-pointer text-xl">
             <img className="w-24" src={logo} alt="" />
           </Link>
@@ -78,13 +72,20 @@ const Nav = () => {
         className="navbar-end text-white  font-medium"
       >
         {user?.photoURL ? (
+          <>
           <button
-            onClick={handleClick}
+            onClick={handleSignOut}
             className="px-4 py-2 bg-[#FAB63E] text-base flex items-center gap-2"
           >
+            <a data-tooltip-id="userName" data-tooltip-content={user?.displayName}>
             <img className="w-7 rounded-full" src={user?.photoURL} alt="" />
+            </a>
             Sign Out
           </button>
+            <Tooltip id="userName" place="left-start">
+              Hello world!
+            </Tooltip>
+          </>
         ) : (
           <Link
             to={"/logIn"}

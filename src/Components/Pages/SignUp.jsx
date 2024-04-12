@@ -10,34 +10,34 @@ import "react-toastify/dist/ReactToastify.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { toast } from "react-toastify";
-import auth from './../../Utilities/firebaseConfig';
+import auth from "./../../Utilities/firebaseConfig";
+import { Helmet } from "react-helmet-async";
 AOS.init();
 const SignUp = () => {
   const [hide, setHide] = useState(false);
-  const { handleCreateUser, handleUpdateProfile, setUser } = useContext(authConfigContext);
+  const { handleCreateUser, handleUpdateProfile, setUser } =
+    useContext(authConfigContext);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data,e) => {
+  const onSubmit = (data, e) => {
     const { name, email, password, url } = data;
     const passValue = data.password;
-    if(!/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(passValue)){
-      return toast.error("provide valid PassCode",{
-        position: 'top-right'
-      })
+    if (!/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(passValue)) {
+      return toast.error("provide valid PassCode", {
+        position: "top-right",
+      });
     }
     handleCreateUser(email, password)
       .then(() => {
-        handleUpdateProfile(name, url)
-        .then(() =>{
-          return setUser({...auth.currentUser})
-        })
-        toast.success("Welcome to KState",{
+        handleUpdateProfile(name, url).then(() => {
+          return setUser({ ...auth.currentUser });
+        });
+        toast.success("Welcome to KState", {
           position: "top-right",
-        }
-        )
+        });
         e.target.reset();
       })
       .catch((error) => {
@@ -51,6 +51,9 @@ const SignUp = () => {
         backgroundImage: `linear-gradient(45deg,rgba(7,25,82,0.7), rgba(0,0,0,0.3)), url(${loginBg})`,
       }}
     >
+      <Helmet>
+        <title>kState || Sign Up</title>
+      </Helmet>
       <div className="flex justify-center items-center w-full min-h-screen text-gray-800">
         <div
           data-aos="zoom-in-up"

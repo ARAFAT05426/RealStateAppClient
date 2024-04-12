@@ -1,6 +1,14 @@
 import PropTypes from "prop-types";
 import authConfigContext from "./authConfigContext";
-import {GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword,onAuthStateChanged,signInWithEmailAndPassword,signInWithPopup,signOut,updateProfile,
+import {
+  GithubAuthProvider,
+  GoogleAuthProvider,
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
+  updateProfile,
 } from "firebase/auth";
 import auth from "../Utilities/firebaseConfig";
 import { useEffect } from "react";
@@ -8,14 +16,16 @@ import { useState } from "react";
 const AuthConfigProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const googleProvider = new GoogleAuthProvider()
-  const githubProvider = new GithubAuthProvider()
-  const handleSignInWithPopup = () =>{
-    return signInWithPopup(auth, googleProvider)
-  }
-  const handleSignInWithgithub = () =>{
-    return signInWithPopup(auth, githubProvider)
-  }
+  const googleProvider = new GoogleAuthProvider();
+  const githubProvider = new GithubAuthProvider();
+  const handleSignInWithPopup = () => {
+    setLoading(true);
+    return signInWithPopup(auth, googleProvider);
+  };
+  const handleSignInWithgithub = () => {
+    setLoading(true);
+    return signInWithPopup(auth, githubProvider);
+  };
   const handleCreateUser = (mail, pass) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, mail, pass);
@@ -25,6 +35,8 @@ const AuthConfigProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, mail, pass);
   };
   const handleSignOut = () => {
+    setLoading(true);
+    setUser(null);
     return signOut(auth);
   };
   const handleUpdateProfile = (name, url) => {
@@ -33,7 +45,8 @@ const AuthConfigProvider = ({ children }) => {
       photoURL: url,
     })
       .then(() => {
-        return setUser({...auth.currentUser});
+        setLoading(false);
+        return setUser({ ...auth.currentUser });
       })
       .catch((error) => {
         console.error(error);
@@ -41,10 +54,8 @@ const AuthConfigProvider = ({ children }) => {
   };
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (cUser) => {
-      if (cUser) {
-          setUser(cUser);
-          setLoading(false);
-      }
+      setLoading(false);
+      setUser(cUser);
     });
     return () => {
       unSubscribe();
@@ -59,7 +70,6 @@ const AuthConfigProvider = ({ children }) => {
     handleUpdateProfile,
     handleSignInWithPopup,
     handleSignInWithgithub,
-    setUser
   };
   return (
     <authConfigContext.Provider value={val}>
