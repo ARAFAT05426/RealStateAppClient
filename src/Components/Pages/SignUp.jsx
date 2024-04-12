@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "/resources/logo.png";
 import loginBg from "/resources/loginBg.jpg";
 import { useForm } from "react-hook-form";
@@ -10,13 +10,13 @@ import "react-toastify/dist/ReactToastify.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { toast } from "react-toastify";
-import auth from "./../../Utilities/firebaseConfig";
 import { Helmet } from "react-helmet-async";
 AOS.init();
 const SignUp = () => {
   const [hide, setHide] = useState(false);
-  const { handleCreateUser, handleUpdateProfile, setUser } =
-    useContext(authConfigContext);
+  const { handleCreateUser, handleUpdateProfile } = useContext(authConfigContext);
+  const location = useLocation();
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -32,12 +32,11 @@ const SignUp = () => {
     }
     handleCreateUser(email, password)
       .then(() => {
-        handleUpdateProfile(name, url).then(() => {
-          return setUser({ ...auth.currentUser });
-        });
+        handleUpdateProfile(name, url)
         toast.success("Welcome to KState", {
           position: "top-right",
         });
+        navigate(location?.state || '/')
         e.target.reset();
       })
       .catch((error) => {

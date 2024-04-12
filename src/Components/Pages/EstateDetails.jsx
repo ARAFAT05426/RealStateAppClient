@@ -24,7 +24,7 @@ const EstateDetails = () => {
     facilities,
   } = filtered;
   return (
-    <div className="text-7xl max-w-screen-2xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-5 mt-20">
+    <div className="text-7xl max-w-screen-2xl h-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-5 mt-20">
       <Helmet>
         <title>kState || Property {id}</title>
       </Helmet>
@@ -32,8 +32,8 @@ const EstateDetails = () => {
         <img className="w-full h-[80vh] p-6" src={image} alt="" />
       </div>
       <div className="bg-white ">
-        <div className="flex flex-col h-full lg:h-[70vh] px-3 py-3 w-full space-y-3">
-          <div className="flex flex-col justify-between grow">
+        <div className="flex flex-col h-fit lg:h-[70vh] px-5 py-3 w-full space-y-3">
+          <div className="flex flex-col justify-between grow-0 lg:grow">
             <div className="">
               <div
                 data-aos="flip-down"
@@ -68,7 +68,7 @@ const EstateDetails = () => {
                   </span>
                 </div>
               </div>
-              <div className="flex flex-col mt-4">
+              <div className="flex flex-col">
                 <span className="flex flex-col text-2xl font-bold space-y-3">
                   <div data-aos="flip-down" data-aos-delay="950">
                     Description

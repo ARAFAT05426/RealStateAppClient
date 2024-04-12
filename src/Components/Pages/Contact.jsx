@@ -8,7 +8,7 @@ const Contact = () => {
       <Helmet>
         <title>kState || Contact</title>
       </Helmet>
-      <section className="flex items-center justify-center min-h-[calc(100vh-120px)] w-full px-3 md:px-20 lg:px-32 my-16 lg:my-12">
+      <section className="flex items-center justify-center min-h-screen w-full px-3 md:px-20 lg:px-32 my-16 lg:my-12">
         <div className="grid grid-cols-1 gap-8 px-8 py-16 w-full rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 bg-gray-100 text-gray-800">
           <div className="flex flex-col justify-between">
             <div className="space-y-2">

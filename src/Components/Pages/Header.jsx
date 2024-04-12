@@ -50,8 +50,8 @@ const Header = () => {
           </SwiperSlide>
         </Swiper>
         <div className="absolute top-[30%] lg:top-[39%] animate__animated animate__zoomInDown lg:left-[30%] z-20 max-w-2xl text-center space-y-4">
-          <h1 className="text-6xl font-bold">Find your real and dream <span className="text-[#FAB63E]">Home</span> in real time</h1>
-          <button className="text-3xl flex flex-col items-center text-center w-full pt-10">Explore Property
+          <h1 className="text-6xl font-bold">Welcome Home Explore <span className="text-[#FAB63E]">Residential</span> Living</h1>
+          <button className="text-3xl flex flex-col items-center text-center w-full pt-10">
           <FaAngleDown className="animate-bounce text-[#FAB63E] mt-5" />
           </button>
         </div>

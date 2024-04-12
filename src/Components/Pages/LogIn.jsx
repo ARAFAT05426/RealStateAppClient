@@ -120,7 +120,7 @@ const LogIn = () => {
             <div data-aos="flip-up" data-aos-delay="500">
               <p className="text-sm w-[95%] mx-auto text-center mt-4 text-[#112D4E]">
                 Don`t have an account?{" "}
-                <Link className="text-blue-700 hover:underline" to={"/signUp"}>
+                <Link className="text-blue-700 hover:underline" to={"/signUp"} state={location?.state}>
                   Sign Up
                 </Link>
               </p>

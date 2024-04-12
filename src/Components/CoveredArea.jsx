@@ -11,7 +11,7 @@ const CoveredArea = () => {
       </div>
       <div className="bg-white ">
         <div className="container mx-auto px-5 lg:px-0 ">
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
             <div data-aos="zoom-in" data-aos-duration="700"
               className="group relative block overflow-hidden transition ease-out active:opacity-75 sm:col-span-2 md:col-span-1"
             >

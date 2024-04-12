@@ -9,6 +9,7 @@ import EstateDetails from "../Pages/EstateDetails";
 import Properties from './../Pages/Properties';
 import Error from "../Pages/Error";
 import Classified from "../Pages/Classified";
+import Agents from "../Pages/Agents";
 
 const routes = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const routes = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact></Contact>,
+      },
+      {
+        path: '/agents',
+        element: <Classified><Agents/></Classified>
       },
       {
         path: "/estates/:id",
