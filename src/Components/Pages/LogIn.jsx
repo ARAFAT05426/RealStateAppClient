@@ -45,11 +45,11 @@ const LogIn = () => {
         e.target.reset();
         navigate(location?.state || "/");
       })
-      .catch((error) => {
-        toast.error("Plz Provide Valid Email & Password", {
+      .catch(() => {
+        return toast.error("Plz Provide Valid Email & Password", {
+          autoClose: 700,
           position: "top-right",
         });
-        console.log(error);
       });
   };
   return (
