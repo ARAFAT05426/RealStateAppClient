@@ -46,6 +46,9 @@ const LogIn = () => {
         navigate(location?.state || "/");
       })
       .catch((error) => {
+        toast.error("Plz Provide Valid Email & Password", {
+          position: "top-right",
+        });
         console.log(error);
       });
   };
@@ -153,7 +156,7 @@ const LogIn = () => {
               <div data-aos="flip-up" data-aos-delay="600">
                 <img
                   onClick={() => handleSocialSignIn(handleSignInWithPopup)}
-                  className="w-40 h-16 px-3 py-1 rounded-md border border-[#112D4E] bg-slate-50 cursor-pointer"
+                  className="w-28 lg:w-40 h-16 px-3 py-1 rounded-md border border-[#112D4E] bg-slate-50 cursor-pointer"
                   src={google}
                   alt=""
                 />
@@ -161,7 +164,7 @@ const LogIn = () => {
               <div data-aos="flip-up" data-aos-delay="600">
                 <img
                   onClick={() => handleSocialSignIn(handleSignInWithgithub)}
-                  className="w-40 h-16 px-3 py-1 rounded-md border border-[#112D4E] bg-slate-50 cursor-pointer"
+                  className="w-28 lg:w-40 h-16 px-3 py-1 rounded-md border border-[#112D4E] bg-slate-50 cursor-pointer"
                   src={github}
                   alt=""
                 />
