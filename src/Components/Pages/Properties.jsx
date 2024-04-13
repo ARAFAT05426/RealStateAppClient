@@ -7,7 +7,7 @@ const Properties = () => {
   return (
     <div className="mt-16">
       <Helmet>
-        <title>kState || Properties</title>
+        <title>kState || Listings</title>
       </Helmet>
       <h1 className="text-center text-5xl font-bold pt-10">Estates</h1>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">

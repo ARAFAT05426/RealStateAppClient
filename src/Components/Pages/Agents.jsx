@@ -1,10 +1,14 @@
 import Member from "../Member";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Helmet } from "react-helmet-async";
 AOS.init();
 const Agents = () => {
   return (
     <div>
+      <Helmet>
+        <title>kState || Agents</title>
+      </Helmet>
       <div className="bg-white ">
         <div className=" space-y-16 px-4 py-16">
           {/* Heading */}
