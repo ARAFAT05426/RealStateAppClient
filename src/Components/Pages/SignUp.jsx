@@ -1,6 +1,5 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "/resources/logo.png";
-import loginBg from "/resources/loginBg.jpg";
 import { useForm } from "react-hook-form";
 import { useContext, useState } from "react";
 import { AiOutlineEye } from "react-icons/ai";
@@ -26,7 +25,7 @@ const SignUp = () => {
     const { name, email, password, url } = data;
     const passValue = data.password;
     if (!/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(passValue)) {
-      return toast.error("provide valid PassCode", {
+      return toast.warning("Password must have upperCase, lowerCase & length more than 6", {
         position: "top-right",
       });
     }
@@ -47,7 +46,7 @@ const SignUp = () => {
     <div
       className=""
       style={{
-        backgroundImage: `linear-gradient(45deg,rgba(7,25,82,0.7), rgba(0,0,0,0.3)), url(${loginBg})`,
+        backgroundImage: `linear-gradient(45deg,rgba(7,25,82,0.7), rgba(0,0,0,0.3)), url("https://i.ibb.co/ScTYs7q/new-york-city-evening-NYCTG0221-52492d6ccab44f328a1c89f41ac02aea.jpg")`,
       }}
     >
       <Helmet>
@@ -76,9 +75,9 @@ const SignUp = () => {
                 placeholder="Name..."
                 className="w-full px-4 py-3 rounded border text-sm font-light"
               ></input>
-              {errors.email && (
+              {errors.name && (
                 <span className="text-xs text-[#FF0000]">
-                  This field is required
+                  {errors.name.message}
                 </span>
               )}
             </div>
@@ -90,7 +89,7 @@ const SignUp = () => {
               ></input>
               {errors.email && (
                 <span className="text-xs text-[#FF0000]">
-                  This field is required
+                  {errors.email.message}
                 </span>
               )}
             </div>
@@ -100,7 +99,7 @@ const SignUp = () => {
                 placeholder="Photo URL..."
                 className="w-full px-4 py-3 rounded border text-sm font-light"
               ></input>
-              {errors.email && (
+              {errors.url && (
                 <span className="text-xs text-[#FF0000]">
                   This field is required
                 </span>
@@ -127,9 +126,9 @@ const SignUp = () => {
                 )}
               </div>
 
-              {errors.email && (
+              {errors.password && (
                 <span className="text-xs text-[#FF0000]">
-                  This field is required
+                  {errors}
                 </span>
               )}
             </div>

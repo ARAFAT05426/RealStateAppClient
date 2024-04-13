@@ -42,6 +42,7 @@ const UpdateProfile = () => {
             data-aos-duration="600"
             className="w-full"
             src={user?.photoURL}
+            onError={(e) => { e.target.src="https://i.ibb.co/HKMPYj4/userImg.png" }}
             alt=""
           />
           <div className="mt-3">
@@ -131,7 +132,7 @@ const UpdateProfile = () => {
                     <div className="col-span-2 lg:col-span-5">
                       <div className="flex items-center w-full border px-3 rounded-md">
                         <input
-                          className="outline-none py-3 px-1 grow text-sm"
+                          className="outline-none py-3 px-1 grow text-sm overflow-hidden text-wrap"
                           type="text"
                           placeholder={user?.displayName}
                           {...register("name", { required: true })}
@@ -151,7 +152,7 @@ const UpdateProfile = () => {
                     <div className="col-span-2 lg:col-span-5">
                       <div className="flex items-center w-full border px-3 rounded-md">
                         <input
-                          className="outline-none py-3 px-1 grow text-xs"
+                          className="outline-none py-3 px-1 grow text-xs overflow-hidden text-wrap"
                           type="text"
                           placeholder={user?.photoURL}
                           {...register("url", { required: true })}

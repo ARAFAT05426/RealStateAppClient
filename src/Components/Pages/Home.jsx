@@ -5,7 +5,7 @@ import Succes from '../Succes';
 import CoveredArea from '../CoveredArea';
 const Home = () => {
     return (
-        <div>
+        <section className='overflow-hidden'>
             <Helmet>
                 <title>kState || Home</title>
             </Helmet>
@@ -15,7 +15,7 @@ const Home = () => {
             <Estates></Estates>
             <Succes></Succes>
             <CoveredArea></CoveredArea>
-        </div>
+        </section>
     );
 };
 

@@ -2,7 +2,6 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "/resources/logo.png";
 import google from "/resources/google.png";
 import github from "/resources/github.png";
-import loginBg from "/resources/loginBg.jpg";
 import { useForm } from "react-hook-form";
 import { useContext, useState } from "react";
 import authConfigContext from "../../Hooks/authConfigContext";
@@ -12,6 +11,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 AOS.init();
 import { Helmet } from "react-helmet-async";
+import { toast } from "react-toastify";
 const LogIn = () => {
   const [hide, setHide] = useState(false);
   const { handleSignIn, handleSignInWithPopup, handleSignInWithgithub } =
@@ -26,6 +26,9 @@ const LogIn = () => {
   const handleSocialSignIn = (method) => {
     method()
       .then(() => {
+        toast.success("Welcome to kState", {
+          position: "top-right",
+        });
         navigate(location?.state || "/");
       })
       .catch(() => {
@@ -36,6 +39,9 @@ const LogIn = () => {
     const { email, password } = data;
     handleSignIn(email, password)
       .then(() => {
+        toast.success("Welcome to kState", {
+          position: "top-right",
+        });
         e.target.reset();
         navigate(location?.state || "/");
       })
@@ -47,13 +53,17 @@ const LogIn = () => {
     <div
       className=""
       style={{
-        backgroundImage: `linear-gradient(45deg,rgba(7,25,82,0.7), rgba(0,0,0,0.3)), url(${loginBg})`,
+        backgroundImage: `linear-gradient(45deg,rgba(7,25,82,0.7), rgba(0,0,0,0.3)), url("https://i.ibb.co/ScTYs7q/new-york-city-evening-NYCTG0221-52492d6ccab44f328a1c89f41ac02aea.jpg")`,
       }}
     >
       <Helmet>
         <title>kState || Login</title>
       </Helmet>
-      <div className="flex justify-center items-center w-full min-h-screen text-gray-800">
+      <div
+        data-aos="zoom-in-up"
+        data-aos-delay="200"
+        className="flex justify-center items-center w-full min-h-screen text-gray-800"
+      >
         <div className="rounded-3xl bg-white/50 backdrop:blur-xl w-[90%] lg:w-1/4 p-6 relative">
           <div
             className="inline-block p-2 text-white rounded-md absolute left-1/2 transform -translate-x-1/2 -translate-y-16"
@@ -103,7 +113,7 @@ const LogIn = () => {
                 )}
               </div>
 
-              {errors.email && (
+              {errors.password && (
                 <span className="text-xs text-[#FF0000]">
                   {errors.password.message}
                 </span>
@@ -120,7 +130,11 @@ const LogIn = () => {
             <div data-aos="flip-up" data-aos-delay="500">
               <p className="text-sm w-[95%] mx-auto text-center mt-4 text-[#112D4E]">
                 Don`t have an account?{" "}
-                <Link className="text-blue-700 hover:underline" to={"/signUp"} state={location?.state}>
+                <Link
+                  className="text-blue-700 hover:underline"
+                  to={"/signUp"}
+                  state={location?.state}
+                >
                   Sign Up
                 </Link>
               </p>

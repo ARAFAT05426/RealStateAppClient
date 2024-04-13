@@ -8,7 +8,7 @@ import authConfigContext from "../../Hooks/authConfigContext";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Tooltip } from "react-tooltip";
-import 'react-tooltip/dist/react-tooltip.css'
+import "react-tooltip/dist/react-tooltip.css";
 AOS.init();
 const Nav = () => {
   const { user, handleSignOut } = useContext(authConfigContext);
@@ -33,7 +33,7 @@ const Nav = () => {
       )}
       <div>
         <NavLink className="cBtn" to={"/agents"}>
-        Agents
+          Agents
         </NavLink>
       </div>
       <div>
@@ -48,7 +48,7 @@ const Nav = () => {
     <nav
       data-aos="fade-down"
       data-aos-duration="700"
-      className="navbar backdrop:blur-lg bg-white/40 z-50 px-3 md:px-14 lg:px-28 fixed top-0 left-0 right-0 h-16"
+      className="navbar backdrop:blur-lg w-full bg-white/40 z-50 px-5 md:px-14 lg:px-28 fixed top-0 left-0 right-0 h-16"
     >
       <div className="navbar-start ">
         <div className="dropdown">
@@ -57,7 +57,7 @@ const Nav = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 rounded-box w-32 backdrop:blur-lg bg-white/40 text-[#112D4E]"
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 rounded-box w-32 backdrop:blur-3xl bg-white/40 text-[#112D4E]"
           >
             {links}
           </ul>
@@ -74,19 +74,22 @@ const Nav = () => {
       <div
         data-aos="flip-up"
         data-aos-duration="1300"
-        className="navbar-end text-white  font-medium"
+        className="navbar-end text-white  font-medium px-1"
       >
         {user?.photoURL ? (
           <>
-          <button
-            onClick={handleSignOut}
-            className="px-4 py-2 bg-[#FAB63E] text-base flex items-center gap-2"
-          >
-            <a data-tooltip-id="userName" data-tooltip-content={user?.displayName}>
-            <img className="w-7 rounded-full" src={user?.photoURL} alt="" />
-            </a>
-            Sign Out
-          </button>
+            <button
+              onClick={handleSignOut}
+              className="px-4 py-2 bg-[#FAB63E] text-base flex items-center gap-2"
+            >
+              <a
+                data-tooltip-id="userName"
+                data-tooltip-content={user?.displayName}
+              >
+                <img className="w-7 rounded-full" src={user?.photoURL} onError={(e) => { e.target.src="https://i.ibb.co/HKMPYj4/userImg.png" }} alt="" />
+              </a>
+              Sign Out
+            </button>
             <Tooltip id="userName" place="left-start">
               Hello world!
             </Tooltip>

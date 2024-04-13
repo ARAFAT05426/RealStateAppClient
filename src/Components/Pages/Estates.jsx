@@ -10,7 +10,7 @@ const Estates = () => {
   return (
     <div className="mt-5 lg:mt-16">
       <div data-aos="fade-down">
-        <h1 className="text-center text-5xl font-bold">Estate</h1>
+        <h1 className="text-center text-5xl font-bold pt-10">Estates</h1>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
         {data.slice(0, 6).map((item, idx) => (
