@@ -1,18 +1,29 @@
-# kState
-# Live-Site:- https://assignment-9-e77da.web.app/
-# Features
-1. Responsive-Design
-2. Smooth Scroll Animation
-3. Functional User Identification
-4. Functional Profile Upadation
-5. Secured Route
-6. Team Listing
-7. Password Validation 
-# Installed Package
-1. AOS
-2. React-Hook-Form
-3. Animate.css
-4. Swiper Slide
+## Proctor Real Estate
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Project Brief
+
+- **Project Concept:** Proctor Real Estate is a comprehensive web application designed to simplify the process of finding and managing real estate properties. It aims to provide detailed property information before renting or buying.
+- **Problem Solved:** Addresses the complexities of finding secure property details and managing property listings.
+
+### Features
+
+- **Property Listings:** Browse for properties based on various criteria.
+- **User Authentication:** Secure user authentication and authorization.
+
+### Technology Used
+
+- **Frontend:** React, Tailwind CSS, Vite
+- **Authentication:** Firebase for secure authentication
+
+### Steps to Clone and Run Locally
+
+1. Clone the repository from GitHub: `git clone https://github.com/your-repo-url.git`
+2. Navigate to the project directory: `cd proctor-real-estate`
+3. Install dependencies: `npm install`
+4. Set up environment variables for Firebase configuration.
+5. Start the development server: `npm start`
+
+### Development Plugins
+
+- **[@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md):** Uses Babel for Fast Refresh.
+- **[@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc):** Uses SWC for Fast Refresh.
