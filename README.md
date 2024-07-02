@@ -1,9 +1,13 @@
-## Proctor Real Estate
+## kState
 
 ### Project Brief
 
-- **Project Concept:** Proctor Real Estate is a comprehensive web application designed to simplify the process of finding and managing real estate properties. It aims to provide detailed property information before renting or buying.
+- **Project Concept:** kState is a comprehensive web application designed to simplify the process of finding and managing real estate properties. It aims to provide detailed property information before renting or buying.
 - **Problem Solved:** Addresses the complexities of finding secure property details and managing property listings.
+
+### Live Site
+
+Explore the live site: [kState Survey Application Live](https://assignment-9-e77da.web.app/).
 
 ### Features
 
