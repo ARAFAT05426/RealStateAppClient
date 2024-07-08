@@ -13,7 +13,7 @@ Explore the live site: [kState Survey Application Live](https://assignment-9-e77
 
 - **Property Listings:** Browse for properties based on various criteria.
 - **User Authentication:** Secure user authentication and authorization.
-
+- **Multi-device Accesibility:** Access property-listings seamlessly on desktop, tablet, and mobile devices for broader reach.
 ### Technology Used
 
 - **Frontend:** React, Tailwind CSS, Vite
